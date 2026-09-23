@@ -1,126 +1,24 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CarLarp — Privacy Policy</title>
-<meta name="description" content="How CarLarp handles your photographs, location and account data.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://rayzor813.github.io/carlarp-site/#privacy">
+<meta http-equiv="refresh" content="0; url=https://rayzor813.github.io/carlarp-site/#privacy">
 <style>
-  :root{--bg:#0B0C0E;--surface:#14161A;--text:#EDEEF0;--muted:rgba(237,238,240,.60);
-        --faint:rgba(237,238,240,.40);--line:rgba(255,255,255,.09);--accent:#E5A93C}
-  @media (prefers-color-scheme: light){
-    :root{--bg:#FBFBFC;--surface:#FFF;--text:#14161A;--muted:rgba(20,22,26,.68);
-          --faint:rgba(20,22,26,.48);--line:rgba(20,22,26,.12);--accent:#B4791C}}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-       -webkit-font-smoothing:antialiased}
-  .wrap{max-width:44rem;margin:0 auto;padding:4rem 1.35rem 6rem}
-  h1{font-size:2rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 .4rem;text-wrap:balance}
-  h2{font-size:1.28rem;letter-spacing:-.01em;margin:3rem 0 .8rem;text-wrap:balance}
-  h3{font-size:1rem;margin:2rem 0 .5rem;color:var(--text)}
-  p,li{color:var(--muted)}
-  strong{color:var(--text);font-weight:600}
-  a{color:var(--accent)}
-  hr{border:0;border-top:1px solid var(--line);margin:2.75rem 0}
-  ul{padding-left:1.15rem;margin:.8rem 0}
-  li{margin:.4rem 0}
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
-       background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:.1em .35em}
-  .tw{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--line);border-radius:10px}
-  table{border-collapse:collapse;width:100%;font-size:.94rem}
-  th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line)}
-  th{color:var(--faint);font-weight:600;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase}
-  tr:last-child td{border-bottom:0}
-  td{color:var(--muted)}
-</style></head><body><div class="wrap">
-<h1>CarLarp Privacy Policy</h1>
-<p><strong>Last updated: 31 August 2026</strong></p>
-<p>CarLarp is a car-spotting game. You photograph cars you see in public, the app identifies them, and they become collectible cards. Some of what you catch appears on a shared map called the Radar.</p>
-<p>This policy explains exactly what we collect, why, who else sees it, and how to get rid of it. It describes what the app actually does — not what a general-purpose policy template says an app might do.</p>
-<hr>
-<h2>The short version</h2>
-<ul><li>Your <strong>photographs</strong> are sent to our server and to Google&#x27;s Gemini API to identify the car. A copy is stored on our servers so your collection survives a new phone.</li><li><strong>Other players can see the photograph of a catch</strong>, in the feed and on the Radar, wherever your username is already shown. A catch is drawn as generated artwork once you render it, and as your own photograph until then. Keeping your profile private keeps your photographs private too.</li><li>Your <strong>location is deliberately blurred before it is saved</strong>. We ask iOS for accuracy no better than about 100 metres, then snap it to a roughly 150-metre grid. Your exact position is never written to disk or sent to our servers.</li><li><strong>You can use CarLarp without an account.</strong> Catching cars, earning XP and ranking up all work signed out. Signing in adds a username to public surfaces.</li><li>We show <strong>no ads</strong>, use <strong>no analytics or tracking SDKs</strong>, and <strong>never sell or share your data for advertising</strong>. We do not track you across other apps or websites.</li><li>You can <strong>delete your account and everything in it from inside the app</strong>, at any time.</li></ul>
-<hr>
-<h2>What we collect</h2>
-<h3>Photographs you take</h3>
-<p><strong>What:</strong> the images you capture in the app.</p>
-<p><strong>Why:</strong> to identify the car. The photo is downscaled and sent to our server, which forwards it to Google&#x27;s Gemini API for recognition. On-device recognition alone is not accurate enough, which is why this happens on a server.</p>
-<p><strong>Where it goes:</strong> a copy is stored in our <code>captures</code> storage bucket so your collection follows your account to a new phone. <strong>That bucket is public</strong>, which means a photograph can be fetched by anyone holding its address. There is no setting that turns this off, and this policy previously said otherwise — it was written before the change and was wrong until 31 August 2026.</p>
-<p><strong>Who sees it:</strong> a catch is shown as generated artwork once it has been rendered, and as your own photograph until then. The photograph appears only on the surfaces that already carry your username — the live feed, the Radar&#x27;s carousel, the boards. <strong>A private profile therefore keeps its photographs private</strong>, because those surfaces do not show a private player&#x27;s catches at all.</p>
-<p><strong>Please photograph cars, not people.</strong> A street photograph can contain faces, number plates and the front of somebody&#x27;s house. Anything you catch may end up in front of other players, so treat the shutter as public.</p>
-<p><strong>Your control:</strong> hiding a catch, blocking a player, or a catch being reported removes the photograph from every one of those surfaces. Deleting a catch deletes its photograph. Deleting your account deletes all of them.</p>
-<h3>Approximate location</h3>
-<p><strong>What:</strong> a blurred, neighbourhood-level coordinate attached to a catch.</p>
-<p><strong>Why:</strong> to place the catch on the Radar.</p>
-<p><strong>How it is blurred, specifically:</strong> the app requests location accuracy of no better than about 100 metres. Before anything is stored, that coordinate is rounded to a grid cell roughly 150 metres across and offset within that cell. Every catch in the same block resolves to the same point, so repeated catches cannot be averaged to recover a precise position. <strong>The precise coordinate exists only in memory for the moment a photo is taken, and is never written to the device, sent to our servers, or logged.</strong></p>
-<p>The glow drawn on the map is additionally offset from that stored point, so the centre of a signal on the Radar is not the place the photo was taken.</p>
-<p><strong>Your control:</strong> location is optional. Decline the permission and the app works — your catches simply do not appear on the Radar.</p>
-<h3>Account information</h3>
-<p><strong>What:</strong> if you sign in with Apple, the identifier Apple gives us and the email address you choose to share. If you use Apple&#x27;s Hide My Email, we only ever see the relay address.</p>
-<p><strong>Why:</strong> so your catches, XP and rank follow you to a new phone, and so you can hold a username on the leaderboard.</p>
-<p><strong>Also stored:</strong> a username and, optionally, a home city — both chosen by you and both visible to other players when your profile is public.</p>
-<h3>Your profile picture</h3>
-<p><strong>What:</strong> an image you choose from your photo library, cropped in the app.</p>
-<p><strong>Why:</strong> so other players can recognise you beside your username.</p>
-<p><strong>Where it goes:</strong> a public storage bucket, for the same reason the catch photographs are — it is shown next to your name wherever your name appears. Only your account can write to it. Choosing a new one replaces the old.</p>
-<p><strong>Your control:</strong> it is entirely optional and there is no picture unless you add one. Removing it in Settings removes it everywhere. Ghosts show the ghost mark instead.</p>
-<h3>Purchases</h3>
-<p><strong>What:</strong> if you buy CarLarp+ or a pack of renders, we store the App Store transaction identifier, which product it was, and whether the subscription is currently active.</p>
-<p><strong>Why:</strong> to give you what you paid for, to restore it on a new phone, and to take it away again if the purchase is refunded.</p>
-<p><strong>What we never see:</strong> your card, your billing address, or your Apple account. Payment happens entirely inside Apple&#x27;s App Store. Apple tells our server that a purchase happened and we verify that message cryptographically; no payment detail ever reaches us.</p>
-<p><strong>Also:</strong> Apple notifies our server when a subscription renews, lapses or is refunded, so the app stays in step with what you are actually paying for.</p>
-<h3>Reports and blocks</h3>
-<p><strong>What:</strong> if you report a catch or block a player, we store who reported or blocked whom, and why.</p>
-<p><strong>Why:</strong> so blocked players disappear from your view, and so a catch that several people report is taken down. This is the machinery that keeps the shared surfaces usable.</p>
-<p><strong>Who sees it:</strong> reports are not shown to the person reported. Blocking is not announced.</p>
-<h3>Gameplay data</h3>
-<p>Your catches, XP, rank, streak and quest progress. This is the game.</p>
-<h3>A device identifier</h3>
-<p>A random identifier generated on first launch and kept on the device. It is used only to rate-limit requests to our identification service and to prevent abuse. It is not tied to your identity, is not shared with anyone, and is destroyed when the app is deleted.</p>
-<h3>What we do not collect</h3>
-<p>We do not collect your contacts, your browsing, your precise location, your health data, your advertising identifier, or your activity in other apps. There is no advertising SDK and no analytics SDK in this app.</p>
-<hr>
-<h2>Who else sees your data</h2>
-<h3>Google (Gemini API)</h3>
-<p>Your photographs are sent to Google&#x27;s Gemini API for car identification. They are sent without your name, username, account identifier or location. Google processes them to return an identification. Google&#x27;s handling is governed by their own terms for API data.</p>
-<p><strong>This is the single most significant disclosure in this policy:</strong> using CarLarp means your photographs are processed by Google. If that is not acceptable to you, the app is not usable, as identification is its core function.</p>
-<h3>Supabase</h3>
-<p>Our database, authentication, file storage and server functions run on Supabase. They host the data described above on our behalf.</p>
-<h3>Apple</h3>
-<p>If you buy anything, Apple takes the payment and tells our server that it happened. We verify that message and record what you are entitled to. Apple does not send us your payment details and we do not ask for them.</p>
-<p>Signing in with Apple gives us an account identifier and, if you allow it, an email address — which may be one of Apple&#x27;s relay addresses, in which case that is all we ever see.</p>
-<h3>Other players</h3>
-<p>When your profile is public, other players can see:</p>
-<ul><li>your <strong>username</strong>, XP and rank on the leaderboard</li><li>your catches on the <strong>Radar</strong> as a blurred map signal — showing the car and its rarity, with <strong>no username, no account identifier and no exact time attached</strong>. Signals stay for 24 hours, or for seven days for CarLarp+ members looking at them</li><li>your catches in the <strong>live feed</strong> and in the Radar&#x27;s carousel, which do carry your username, your profile picture, and <strong>the photograph or the rendered artwork of the catch</strong></li></ul>
-<p>Turning off <strong>Public profile</strong> in Settings removes you from the leaderboard&#x27;s profile links and the live feed, and stops your catches appearing on other players&#x27; Radar. Because your photographs are only ever shown on those same surfaces, turning it off keeps them out of sight as well. Your own Radar continues to show your own catches.</p>
-<p><strong>Ghost mode</strong> goes further: your username and profile picture are withheld from the feed, the boards and the Radar by the server itself, not by the app asking politely.</p>
-<h3>Nobody else</h3>
-<p>We do not sell your personal data. We do not share it for advertising or marketing. We do not use it to build advertising profiles.</p>
-<hr>
-<h2>How long we keep things</h2>
-<div class='tw'><table><thead><tr><th>Data</th><th>Retained</th></tr></thead><tbody><tr><td>Radar signals</td><td><strong>24 hours</strong> on the live map (<strong>7 days</strong> for CarLarp+ members viewing them)</td></tr><tr><td>Your catches, XP and rank</td><td>Until you delete them or your account</td></tr><tr><td>Photographs of your catches</td><td>Until you delete the catch or your account</td></tr><tr><td>Your profile picture</td><td>Until you replace it, remove it, or delete your account</td></tr><tr><td>Purchase records</td><td>Kept while the entitlement lasts, and afterwards as a record of the transaction</td></tr><tr><td>Reports you make</td><td>Kept while they are acted on, so the same catch is not re-reviewed forever</td></tr><tr><td>Account record</td><td>Until you delete your account</td></tr></tbody></table></div>
-<p>Removing a signal from the Radar after 24 hours does not delete the catch — it stays in your Garage. The Radar shows recent activity, not a permanent history.</p>
-<hr>
-<h2>Deleting your account</h2>
-<p><strong>Settings → Account → Delete account.</strong></p>
-<p>This permanently deletes your account record, catches, XP, rank, quests, username and any backed-up photographs. It cannot be undone.</p>
-<p>If you signed in with Apple, we also <strong>revoke the Sign in with Apple credential</strong> with Apple as part of deletion, so the connection between your Apple ID and CarLarp is removed on their side as well as ours.</p>
-<p>Deleting the app without deleting your account leaves your account on our servers. Delete the account first if that is what you want.</p>
-<hr>
-<h2>Your rights</h2>
-<p>Depending on where you live, you may have the right to access, correct, export or delete your personal data, and to object to or restrict certain processing. The in-app deletion above satisfies deletion. For anything else, contact us at the address below and we will respond.</p>
-<p>We do not sell or share personal information as those terms are defined under California law.</p>
-<hr>
-<h2>Children</h2>
-<p>CarLarp is not directed at children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
-<hr>
-<h2>Security</h2>
-<p>Photographs are stored in a private bucket readable only by the account that owns them, enforced at the database level rather than by the app. Scoring and account data are protected by row-level security policies so one account cannot read or modify another&#x27;s. Apple credentials used for deletion are stored where no client application can read them.</p>
-<p>No system is perfectly secure, but the boundaries above are enforced by the server, not by trusting the app.</p>
-<hr>
-<h2>Changes</h2>
-<p>If we change this policy we will update the date at the top. Material changes will be surfaced in the app before they take effect.</p>
-<hr>
-<h2>Contact</h2>
-<p><strong><a href="mailto:carlarpstudio@gmail.com">carlarpstudio@gmail.com</a></strong></p>
-</div></body></html>
+  :root { color-scheme: light dark; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+         background:#fbfaf8; color:#1c1b19; padding:24px; text-align:center; }
+  @media (prefers-color-scheme: dark) { body { background:#121211; color:#eceae6; } }
+  a { color:#0a7d78; }
+</style>
+</head>
+<body>
+  <main>
+    <p>CarLarp's Privacy Policy has moved.</p>
+    <p><a href="https://rayzor813.github.io/carlarp-site/#privacy">Continue to the current Privacy Policy</a></p>
+  </main>
+</body>
+</html>
